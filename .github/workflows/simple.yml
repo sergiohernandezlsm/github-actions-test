@@ -10,5 +10,5 @@ jobs:
         run: echo "Hello Sergio"
       - name: miltiline script
         run: |
-          node-v
+          node -v
           npm -v
