@@ -1,0 +1,9 @@
+name: Sergio
+age: 36
+address: "Milton Keynes"
+active: true
+key:
+  key: value
+  key2: 33
+  key3:
+    key: "vslu"
