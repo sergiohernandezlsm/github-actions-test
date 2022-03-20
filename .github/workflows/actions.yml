@@ -12,4 +12,4 @@ jobs:
         with:
           who-to-greet: "Sergio Hernandez"
       - name: Log Greeting Time
-        run: echo "${{steps.greetId.outpout.time}}"
+        run: echo "${{steps.greetId.output.time}}"
