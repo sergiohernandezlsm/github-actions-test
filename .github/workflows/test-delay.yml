@@ -21,6 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - name: start minikube
+        id: minikube
+        uses: medyagh/setup-minikube@master
       - name: get deployments
         run: |
           kubectl config get-contexts
