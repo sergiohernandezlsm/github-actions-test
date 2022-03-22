@@ -33,13 +33,6 @@ jobs:
           minikube service example --url
           echo "------------------opening the service------------------"
           curl $(minikube service example --url)
-      - name: Test service URLs
-        run: |
-          minikube service list
-          minikube service example --url
-          echo "------------------opening the service------------------"
-          curl $(minikube service example --url)
-            - name: Get deployment
       - name: Get Deployments
         run: |
           kubectl config get-contexts
