@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: echo a string
         env:
-          COMMIT_VAR: "node index.js"
+          COMMIT_VAR: ${{node index.js}}
         run: |
           $COMMIT_VAR
       - name: echo a string 2
