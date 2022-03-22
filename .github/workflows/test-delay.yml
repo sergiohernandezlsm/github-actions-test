@@ -1,0 +1,19 @@
+name: Shell Commands
+
+on: [push]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo "Hello Sergio"
+      - name: multiline script
+        run: |
+          node -v
+          npm -v
+      - name: Sleep for 30 seconds
+        run: sleep 30s
+        shell: bash
+      - name: echo after delay
+        run: echo "Hello After Delay"
