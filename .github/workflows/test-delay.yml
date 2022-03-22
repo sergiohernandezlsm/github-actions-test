@@ -16,7 +16,7 @@ jobs:
         env:
           TEST: ${{ steps.pod.outputs.sha_short }}
         run: |
-          $TEST
+          echo $TEST
       # - name: multiline script
       #   run: |
       #     node -v
