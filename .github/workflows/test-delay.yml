@@ -8,9 +8,9 @@ jobs:
     steps:
       - name: echo a string
         env:
-          COMMIT_VAR: ${{ github.event.head_commit.message }}
+          COMMIT_VAR: ${{ node -v }}
         run: |
-          echo "flag=${COMMIT_VAR}"
+          ${COMMIT_VAR}
       # - name: multiline script
       #   run: |
       #     node -v
