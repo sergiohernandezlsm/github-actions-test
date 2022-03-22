@@ -8,13 +8,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: echo a string
-        env:
-          COMMIT_VAR: ${{node index.js}}
+        id: pod
+        shell: bash
         run: |
-          $COMMIT_VAR
+          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: echo a string 2
         run: |
-          $COMMIT_VAR
+          ${{ steps.pod.outputs }}
       # - name: multiline script
       #   run: |
       #     node -v
