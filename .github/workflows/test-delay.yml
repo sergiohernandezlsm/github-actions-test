@@ -3,37 +3,40 @@ name: Shell Commands
 on: [push]
 
 jobs:
-  # run-shell-command:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: echo a string
-  #       run: echo "Hello Sergio"
-  #     - name: multiline script
-  #       run: |
-  #         node -v
-  #         npm -v
-  #     - name: Sleep for 30 seconds
-  #       run: sleep 10s
-  #       shell: bash
-  #     - name: echo after delay
-  #       run: echo "Hello After Delay"
-  build:
+  run-shell-command:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Start minikube
-        uses: medyagh/setup-minikube@master
-      - name: Try the cluster !
-        run: kubectl get pods -A
-      - name: Deploy to minikube
-        run: make deploy-minikube
-      - name: Test service URLs
+      - name: echo a string
+        env:
+          COMMIT_VAR: "testor is here"
         run: |
-          minikube service list
-          minikube service example --url
-          echo "------------------opening the service------------------"
-      - name: Get Deployments
-        run: |
-          kubectl config get-contexts
-          kubectl get deployments
-          kubectl get pods
+          echo "flag=${COMMIT_VAR}"
+      # - name: multiline script
+      #   run: |
+      #     node -v
+      #     npm -v
+      # - name: Sleep for 30 seconds
+      #   run: sleep 10s
+      #   shell: bash
+      # - name: echo after delay
+      #   run: echo "Hello After Delay"
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Start minikube
+  #       uses: medyagh/setup-minikube@master
+  #     - name: Try the cluster !
+  #       run: kubectl get pods -A
+  #     - name: Deploy to minikube
+  #       run: make deploy-minikube
+  #     - name: Test service URLs
+  #       run: |
+  #         minikube service list
+  #         minikube service example --url
+  #         echo "------------------opening the service------------------"
+  #     - name: Get Deployments
+  #       run: |
+  #         kubectl config get-contexts
+  #         kubectl get deployments
+  #         kubectl get pods
