@@ -6,6 +6,7 @@ jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: echo a string
         env:
           COMMIT_VAR: ${{ node -v }}
