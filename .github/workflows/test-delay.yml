@@ -26,7 +26,7 @@ jobs:
       - name: Try the cluster !
         run: kubectl get pods -A
       - name: Deploy to minikube
-        run: kubectl apply -f ../deploy-to-minikube.yaml
+        run: make deploy-minikube
       - name: Test service URLs
         run: |
           minikube service list
