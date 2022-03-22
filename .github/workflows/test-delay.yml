@@ -11,7 +11,7 @@ jobs:
         env:
           COMMIT_VAR: "node -v"
         run: |
-          "${COMMIT_VAR}"
+          ${COMMIT_VAR}
       # - name: multiline script
       #   run: |
       #     node -v
