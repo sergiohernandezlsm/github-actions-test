@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: echo a string
         env:
-          COMMIT_VAR: ${{ node -v }}
+          COMMIT_VAR: "node -v"
         run: |
           "${COMMIT_VAR}"
       # - name: multiline script
