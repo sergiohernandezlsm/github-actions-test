@@ -17,3 +17,19 @@ jobs:
         shell: bash
       - name: echo after delay
         run: echo "Hello After Delay"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Minikube
+        id: minikube
+        uses: CodingNagger/minikube-setup-action@v1.0.2
+      - name: Launch Minikube
+        run: eval ${{ steps.minikube.outputs.launcher }}
+      - name: Install Nginx pod
+        run: kubectl apply -f https://k8s.io/examples/application/deployment.yaml
+      - name: Wait for pods
+        uses: CodingNagger/minikube-wait-action@v1.0.1
+      - name: Check pods
+        run: |
+          kubectl get pods
