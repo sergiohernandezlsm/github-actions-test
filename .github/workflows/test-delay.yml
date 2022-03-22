@@ -27,6 +27,8 @@ jobs:
       - name: get deployments
         run: |
           kubectl config get-contexts
+          kubectl get deployments
+          kubectl get pods
       # - name: Setup Minikube
       #   id: minikube
       #   uses: CodingNagger/minikube-setup-action@v1.0.2
