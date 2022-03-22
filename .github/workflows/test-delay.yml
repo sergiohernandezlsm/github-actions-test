@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: echo a string
         env:
           COMMIT_VAR: "node -v"
-      - name: echo a string
         run: |
           ${COMMIT_VAR}
       - name: echo a string 2
