@@ -13,7 +13,7 @@ jobs:
           node -v
           npm -v
       - name: Sleep for 30 seconds
-        run: sleep 30s
+        run: sleep 10s
         shell: bash
       - name: echo after delay
         run: echo "Hello After Delay"
