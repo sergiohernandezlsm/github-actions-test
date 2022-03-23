@@ -10,13 +10,13 @@ jobs:
       - name: echo a string
         id: pod
         # shell: bash
-        run: |
-          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: echo a string 2
         env:
           TEST: ${{ steps.pod.outputs.sha_short }}
-        run: |
-          echo ${{ steps.pod.outputs.sha_short }}
+        run: echo ${{ steps.pod.outputs.sha_short }}
+      - name: echo a github object
+        run: echo ${{ github }}
       # - name: multiline script
       #   run: |
       #     node -v
