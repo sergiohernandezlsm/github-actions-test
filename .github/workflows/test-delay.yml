@@ -16,7 +16,7 @@ jobs:
           TEST: ${{ steps.pod.outputs.sha_short }}
         run: echo ${{ steps.pod.outputs.sha_short }}
       - name: echo a github object
-        run: echo ${{ github }}
+        run: echo ${{ github.event }}
       # - name: multiline script
       #   run: |
       #     node -v
